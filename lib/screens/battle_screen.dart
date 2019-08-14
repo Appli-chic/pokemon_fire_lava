@@ -1,8 +1,7 @@
 import 'package:audioplayers/audio_cache.dart';
-import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
-import 'package:nima/nima_actor.dart';
-import 'package:pokemon_fire_lava/components/battle_enemy_part.dart';
+import 'package:pokemon_fire_lava/components/battle_enemy_side.dart';
+import 'package:pokemon_fire_lava/components/battle_player_side.dart';
 
 class BattleScreen extends StatefulWidget {
   BattleScreen({Key key}) : super(key: key);
@@ -13,7 +12,6 @@ class BattleScreen extends StatefulWidget {
 
 class _BattleScreenState extends State<BattleScreen> {
   AudioCache audioPlayer = AudioCache();
-  String _animationName = "throw_ball";
 
   @override
   void initState() {
@@ -29,24 +27,11 @@ class _BattleScreenState extends State<BattleScreen> {
         color: Colors.white,
         child: Column(
           children: <Widget>[
-            BattleEnemyPart(),
+            BattleEnemySide(),
             Expanded(
               child: Container(),
             ),
-            Container(
-              height: 120,
-              child: NimaActor(
-                "assets/pokemon_main_character.nma",
-                alignment: Alignment.bottomLeft,
-                animation: _animationName,
-                fit: BoxFit.fitHeight,
-                completed: (String animationName) {
-                  setState(() {
-                    _animationName = "idle";
-                  });
-                },
-              ),
-            ),
+            BattlePlayerSide(),
           ],
         ),
       ),
