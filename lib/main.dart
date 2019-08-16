@@ -4,6 +4,7 @@ import 'package:pokemon_fire_lava/screens/battle_screen.dart';
 
 void main() {
   // Set fullscreen
+  SystemChrome.setPreferredOrientations([DeviceOrientation.landscapeLeft]);
   SystemChrome.setEnabledSystemUIOverlays([]);
 
   runApp(MyApp());
