@@ -10,7 +10,7 @@ class BattleEnemySide extends StatefulWidget {
 class _BattleEnemySideState extends State<BattleEnemySide> {
   Widget _displaysEnemyInfo() {
     return Container(
-      margin: EdgeInsets.only(left: 60),
+      margin: EdgeInsets.only(left: kToolbarHeight),
       child: Stack(
         children: <Widget>[
           Container(

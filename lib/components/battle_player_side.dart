@@ -119,7 +119,7 @@ class _BattlePlayerSideState extends State<BattlePlayerSide> {
             Container(
               height: 40,
               width: 276,
-              margin: EdgeInsets.only(left: 60),
+              margin: EdgeInsets.only(left: kToolbarHeight),
               child: Image.asset(
                 'assets/grass-player.png',
                 fit: BoxFit.fitHeight,
@@ -128,7 +128,7 @@ class _BattlePlayerSideState extends State<BattlePlayerSide> {
             ),
             Container(
               height: 120,
-              margin: EdgeInsets.only(left: 60),
+              margin: EdgeInsets.only(left: kToolbarHeight),
               child: Image.asset(
                 'assets/pikachu.png',
                 fit: BoxFit.fitHeight,
@@ -161,53 +161,10 @@ class _BattlePlayerSideState extends State<BattlePlayerSide> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.end,
-      children: <Widget>[
-        _isDisplayingPokemon
-            ? _displaysPokemon()
-            : _displaysCharacterAnimation(),
-        Stack(
-          children: <Widget>[
-            Container(
-              height: 120,
-              width: double.infinity,
-              child: Image.asset(
-                'assets/background_text.png',
-                fit: BoxFit.fill,
-                alignment: Alignment.bottomLeft,
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.only(top: 20, left: 38),
-              child: Text(
-                "What will PIKACHU do?",
-                style: TextStyle(
-                  color: Color(0xfff7f7f7),
-                  fontFamily: 'PokemonFireRed',
-                  fontSize: 40,
-                  shadows: <Shadow>[
-                    Shadow(
-                      offset: Offset(2, 2),
-                      blurRadius: 1.0,
-                      color: Color(0xff685870),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Container(
-              height: 120,
-              width: double.infinity,
-              child: Image.asset(
-                'assets/battle_ui.png',
-                fit: BoxFit.fitHeight,
-                alignment: Alignment.bottomRight,
-              ),
-            ),
-          ],
-        ),
-      ],
+    return Container(
+      child: _isDisplayingPokemon
+          ? _displaysPokemon()
+          : _displaysCharacterAnimation(),
     );
   }
 }

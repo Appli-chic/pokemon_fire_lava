@@ -1,5 +1,6 @@
 import 'package:audioplayers/audio_cache.dart';
 import 'package:flutter/material.dart';
+import 'package:pokemon_fire_lava/components/battle_actions.dart';
 import 'package:pokemon_fire_lava/components/battle_enemy_side.dart';
 import 'package:pokemon_fire_lava/components/battle_player_side.dart';
 
@@ -31,12 +32,16 @@ class _BattleScreenState extends State<BattleScreen> {
           ),
         ),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             BattleEnemySide(),
-            Expanded(
-              child: Container(),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: <Widget>[
+                BattlePlayerSide(),
+                BattleActions(),
+              ],
             ),
-            BattlePlayerSide(),
           ],
         ),
       ),
